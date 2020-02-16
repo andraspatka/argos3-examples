@@ -29,12 +29,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ARGOS_PREFIX}/share/argos3/cmake)
 # code that depends on Qt and OpenGL
 include(ARGoSCheckQTOpenGL)
 
-# Look for the (optional) galib library
-find_package(GALIB)
-if(GALIB_FOUND)
-  include_directories(${GALIB_INCLUDE_DIRS})
-endif(GALIB_FOUND)
-
 # Find Lua
 find_package(Lua53 REQUIRED)
 
@@ -49,6 +43,3 @@ add_subdirectory(controllers)
 
 # Descend into the loop_functions directory
 add_subdirectory(loop_functions)
-
-# Descend into the embedding directory
-add_subdirectory(embedding)
